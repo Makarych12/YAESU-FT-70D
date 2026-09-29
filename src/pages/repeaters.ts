@@ -31,7 +31,7 @@ function shiftText(r: Repeater) {
   if (r.shiftDir === 'simplex') return 'Без сдвига';
   return `Сдвиг ${r.shiftDir === '-' ? '−' : '+'}${r.shift} МГц`;
 }
-const STATUS = { ok: ['🟢', 'работает'], unknown: ['⚪', 'статус неизвестен'], off: ['🔴', 'не работает'] } as const;
+const STATUS = { ok: ['🟢', 'в списке работает'], unknown: ['⚪', 'работу уточнить'], off: ['🔴', 'не работает'] } as const;
 
 function card(r: Repeater) {
   const st = STATUS[r.status ?? 'unknown'];
@@ -44,6 +44,7 @@ function card(r: Repeater) {
     </div>
     <div class="rpt-params">
       <span class="chip chip-mode-${r.mode.toLowerCase()}">${r.mode === 'C4FM' ? '🟦 C4FM цифра' : '📻 FM'}</span>
+      ${r.distanceKm ? `<span class="chip">≈ ${r.distanceKm} км по прямой</span>` : ''}
       <span class="chip">${shiftText(r)}${r.shiftAssumed ? ' ⚠️' : ''}</span>
       <span class="chip">${toneText(r)}</span>
       ${r.shiftDir !== 'simplex' ? `<span class="chip">Передача ${fmtFreq(txFreq(r))}</span>` : ''}
@@ -61,23 +62,28 @@ function card(r: Repeater) {
 export const repeatersPage: Page = (el) => {
   let q = '';
   let band: 'all' | '2m' | '70cm' = 'all';
+  let country: 'all' | 'cz' | 'de' = 'all';
   let showOff = false;
   const draw = () => {
     const list = allRepeaters()
       .filter((r) => showOff || r.status !== 'off')
       .filter((r) => band === 'all' || bandOf(r.freq) === band || (band === '70cm' && r.freq > 400))
+      .filter((r) => country === 'all' || r.id.startsWith(`${country}-`))
       .filter((r) => !q || `${r.name} ${r.city} ${r.callsign ?? ''} ${r.freq}`.toLowerCase().includes(q.toLowerCase()))
-      .sort((a, b) => Number(!!b.builtin === false) - Number(!!a.builtin === false) || a.freq - b.freq);
+      .sort((a, b) => Number(!!a.builtin) - Number(!!b.builtin) || (a.distanceKm ?? Infinity) - (b.distanceKm ?? Infinity) || a.freq - b.freq);
     el.querySelector('#list')!.innerHTML = list.map(card).join('') || '<p class="muted">Ничего не нашлось.</p>';
   };
   el.innerHTML = `<h1>📶 ${t('myRepeaters')}</h1>
-    <div class="note note-warn"><span class="note-ico">⚠️</span><div>Частоты и тоны собраны из открытых списков (RepeaterBook, ORLink) на 29.09.2026 и могут устареть.
-    Перед выходом в эфир уточни их у местных радиолюбителей. Значок ⚠️ у сдвига — величина взята стандартная.</div></div>
+    <div class="note note-warn"><span class="note-ico">⚠️</span><div>Список для Марианских Лазней: Чехия и приграничная Германия. Частоты проверены по каталогам и сайтам операторов 29.09.2026; живую работу репитера это не подтверждает.
+    Расстояние указано по прямой. С портативной FT-70DE приём и ответ сильно зависят от высоты, рельефа и антенны. Начни с прослушивания на улице или возвышенности; перед передачей уточни параметры и правила работы у местных радиолюбителей.</div></div>
     <div class="btn-row"><a class="btn btn-big btn-primary" href="#/rpt/new">➕ Добавить свой репитер</a><a class="btn btn-big" href="#/wizard">🧮 Настрой по частоте</a></div>
     <div class="search"><label for="rq" class="sr-only">Поиск репитера</label><input id="rq" type="search" placeholder="Город, позывной или частота"></div>
     <div class="filter" role="group" aria-label="Диапазон">
       <button class="btn on" data-b="all">Все</button><button class="btn" data-b="2m">2 м (145)</button><button class="btn" data-b="70cm">70 см (430+)</button>
       <button class="btn" data-off aria-pressed="false">🔴 Показать неработающие</button>
+    </div>
+    <div class="filter" role="group" aria-label="Страна">
+      <button class="btn on" data-country="all">Обе страны</button><button class="btn" data-country="cz">🇨🇿 Чехия</button><button class="btn" data-country="de">🇩🇪 Германия</button>
     </div>
     <div class="list" id="list"></div>
     <div class="btn-row"><button class="btn" id="restore">↺ Вернуть удалённые встроенные репитеры</button></div>`;
@@ -98,6 +104,11 @@ export const repeatersPage: Page = (el) => {
     }
     draw();
   });
+  el.querySelectorAll<HTMLElement>('[data-country]').forEach((button) => button.addEventListener('click', () => {
+    country = button.dataset.country as typeof country;
+    el.querySelectorAll('[data-country]').forEach((x) => x.classList.toggle('on', x === button));
+    draw();
+  }));
   el.querySelector('#restore')!.addEventListener('click', () => {
     store.restoreBuiltins();
     toast('Встроенный список восстановлен');
@@ -176,8 +187,8 @@ export const repeaterFormPage: Page = (el, [id]) => {
   const draw = () => {
     el.innerHTML = `<h1>${existing ? '✏️ Изменить репитер' : '➕ Новый репитер'}</h1>
     <form class="form" id="f" novalidate>
-      <div class="field"><label for="name">Название</label><input id="name" required value="${esc(r.name)}" placeholder="Например: Киев R81"></div>
-      <div class="field"><label for="city">Город / место</label><input id="city" value="${esc(r.city)}" placeholder="Например: Киев"></div>
+      <div class="field"><label for="name">Название</label><input id="name" required value="${esc(r.name)}" placeholder="Например: OK0BE"></div>
+      <div class="field"><label for="city">Город / место</label><input id="city" value="${esc(r.city)}" placeholder="Например: Клиновец"></div>
       <div class="field"><label for="freq">Частота ВЫХОДА репитера, МГц</label>
         <input id="freq" inputmode="decimal" value="${fmtFreq(r.freq)}" placeholder="145.675"><div class="hint" id="freq-hint"></div></div>
       <div class="field"><span class="lbl">Сдвиг</span>${segBtns('shiftDir', [['-', '− минус'], ['+', '+ плюс'], ['simplex', 'Без сдвига']], r.shiftDir)}</div>

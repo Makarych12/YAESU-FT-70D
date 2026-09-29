@@ -91,7 +91,7 @@ export const store = {
   },
   deleteRepeater(id: string) {
     data.repeaters = data.repeaters.filter((r) => r.id !== id);
-    if (!data.hiddenBuiltins.includes(id) && id.match(/^(rb|orl)-/)) data.hiddenBuiltins.push(id);
+    if (!data.hiddenBuiltins.includes(id) && /^(?:cz|de|rb|orl)-/.test(id)) data.hiddenBuiltins.push(id);
     save();
   },
   restoreBuiltins() {

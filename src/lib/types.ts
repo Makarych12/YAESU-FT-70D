@@ -108,6 +108,8 @@ export interface Repeater {
   id: string;
   name: string;
   city: string;
+  /** приблизительное расстояние по прямой от центра Марианских Лазней, км */
+  distanceKm?: number;
   callsign?: string;
   /** частота выхода репитера (то, что слушаем), МГц */
   freq: number;

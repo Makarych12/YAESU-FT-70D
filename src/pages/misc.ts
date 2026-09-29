@@ -242,10 +242,15 @@ export const sourcesPage: Page = (el) => {
       <li>${L('https://wp.hamoperator.com/?p=1322', 'HamOperator — Battery Hints and the FT-70')}</li>
       <li>${L('https://www.rtsystemsinc.com/FT-70D_c_814.html', 'RT Systems ADMS-70D')}</li></ul></div>
     <div class="card mt"><h3>Репитеры</h3><ul>
-      <li>${L('https://www.repeaterbook.com/row_repeaters/Display_SS.php?state_id=UA', 'RepeaterBook — Ukraine')} (данные на 29.09.2026)</li>
-      <li>${L('https://www.odradio.link/the-frequency-of-our-repeaters-and-nodes.html', 'ORLink — Одесская сеть ретрансляторов')}</li>
-      <li>${L('http://c4fm.xyz/repeaters-map-c4fm.php', 'Карта C4FM-репитеров')}</li>
-      <li>${L('https://uarl.info/', 'uarl.info — сайт радиолюбителей Украины')}</li></ul></div>
+      <li>${L('https://prevadece.smoce.net/seznam-prevadecu/cz/', 'Smoce — каталог репитеров Чехии')}</li>
+      <li>${L('https://ok1kvk.cz/clanek/2008/ok0e-a-ok0be/', 'OK1KVK — репитеры на Клиновце')}</li>
+      <li>${L('https://z64.vfdb.org/z64-aktivitat/notfunk/relaisliste/', 'VFDB Z64 — список северной Баварии')}</li>
+      <li>${L('https://z64.vfdb.org/impressum/', 'VFDB Z64 — параметры DB0YQ')}</li>
+      <li>${L('https://www.darc-mak.de/relais.html', 'DARC Marktredwitz — DB0MAK')}</li>
+      <li>${L('https://www.darc.de/der-club/distrikte/b/vhfuhfshf/', 'DARC Oberfranken — DB0ZB')}</li>
+      <li>${L('https://www.repeaterbook.com/row_repeaters/Display_SS.php?state_id=CZ', 'RepeaterBook — Чехия')}</li>
+      <li>${L('https://www.repeaterbook.com/row_repeaters/details.php?ID=2697&state_id=DE', 'RepeaterBook — DB0RQ')}</li></ul>
+      <p class="muted">Список составлен 29.09.2026. Расстояния приблизительные, по прямой от центра Марианских Лазней; досягаемость не гарантируется.</p></div>
     <div class="card mt"><h3>Фото</h3><p>Фото FT-70DE: Hensys1, ${L('https://commons.wikimedia.org/wiki/File:FT70DE_sk.jpg', 'Wikimedia Commons')}, лицензия ${L('https://creativecommons.org/licenses/by-sa/4.0/', 'CC BY-SA 4.0')}.
       Схемы рации нарисованы для этого приложения и не копируют фото и рисунки Yaesu.</p></div>
     <div class="card mt"><h3>Важно</h3><p>Тексты написаны своими словами по мануалам Yaesu. Шаги с пометкой ⚠️ не удалось полностью подтвердить по мануалу — проверь их на рации.

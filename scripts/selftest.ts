@@ -3,7 +3,7 @@
  * Проверяет критерии приёмки ТЗ (п. 9): поиск и генератор инструкций для репитера.
  */
 import { search } from '../src/lib/search';
-import { generateSteps, CTCSS, DCS, txFreq, channelName } from '../src/lib/generator';
+import { generateSteps, CTCSS, DCS, txFreq, channelName, canTx } from '../src/lib/generator';
 import { instructions, menuItems, sections, refTitle, builtinRepeaters } from '../src/lib/content';
 import type { Repeater } from '../src/lib/types';
 import { isKey } from '../src/components/ui';
@@ -66,6 +66,9 @@ const inlineBad = instructions.flatMap((i) => i.steps.flatMap((s) => [...`${s.te
 ok(inlineBad.length === 0, `клавиши в тексте известны ${inlineBad.join(', ')}`);
 ok(instructions.every((i) => i.manualRef), 'у каждой инструкции есть ссылка на источник');
 ok(builtinRepeaters.every((r) => r.source && r.checked), `у всех ${builtinRepeaters.length} встроенных репитеров есть источник и дата`);
+ok(builtinRepeaters.every((r) => r.id.startsWith('cz-') || r.id.startsWith('de-')), 'встроенный список относится к Чехии и Германии');
+ok(builtinRepeaters.every((r) => canTx(txFreq(r))), 'частоты передачи всех местных репитеров доступны FT-70DE');
+ok(builtinRepeaters.every((r) => r.distanceKm && r.distanceKm <= 70), 'все местные репитеры имеют оценку расстояния до 70 км');
 const unverified = instructions.filter((i) => !i.verified || i.steps.some((s) => s.check));
 console.log(`\nℹ️ Инструкций: ${instructions.length}. С пометкой ⚠️: ${unverified.length} — ${unverified.map((i) => i.id).join(', ')}`);
 
