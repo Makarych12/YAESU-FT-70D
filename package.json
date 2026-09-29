@@ -1,0 +1,22 @@
+{
+  "name": "ft70d-prosto",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "FT-70D — просто и понятно. Офлайн-инструкция по Yaesu FT-70DE для UR4MAD",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\" && vite build --emptyOutDir false",
+    "preview": "vite preview --host",
+    "check": "tsc --noEmit",
+    "test": "rolldown scripts/selftest.ts -o node_modules/.cache/selftest.mjs -p node -f esm --log-level warn && node node_modules/.cache/selftest.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vite": "^8.3.1"
+  },
+  "dependencies": {
+    "@fontsource/golos-text": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0"
+  }
+}

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>FT-70D — просто и понятно</title>
+    <meta name="description" content="Пошаговая офлайн-инструкция по радиостанции Yaesu FT-70DE: репитеры, память, цифра C4FM, WIRES-X, меню SET. Для UR4MAD." />
+    <meta name="theme-color" content="#0b0d10" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icons/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="./icons/icon-192.png" sizes="192x192" type="image/png" />
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="FT-70D" />
+    <script>
+      try {
+        var d = JSON.parse(localStorage.getItem('ft70d:v1') || '{}').settings || {};
+        document.documentElement.dataset.theme = d.theme || 'dark';
+        document.documentElement.style.setProperty('--scale', d.fontScale || 1);
+      } catch (e) {}
+      window.addEventListener('beforeinstallprompt', function (e) { e.preventDefault(); window.__installEvt = e; });
+    </script>
+  </head>
+  <body>
+    <div id="app">
+      <noscript>Для работы приложения нужен JavaScript.</noscript>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,640 @@
+[
+ {
+  "no": 1,
+  "name": "ANT.ATT",
+  "what": "Аттенюатор: ослабляет приём примерно на 10 дБ. Нужен, если рядом мощная станция «забивает» всё.",
+  "options": "OFF / ON",
+  "def": "OFF",
+  "recommend": "OFF",
+  "safety": "yellow",
+  "page": "OM 36; AM 28"
+ },
+ {
+  "no": 2,
+  "name": "APO",
+  "what": "Автовыключение: рация выключится сама, если её не трогать заданное время. За минуту пищит.",
+  "options": "OFF / 0.5H … 12H",
+  "def": "OFF",
+  "recommend": "3.0H — чтобы не посадить батарею, если забыл выключить",
+  "safety": "green",
+  "page": "AM 28"
+ },
+ {
+  "no": 3,
+  "name": "BCLO",
+  "what": "Запрет передачи, пока на частоте кто-то говорит.",
+  "options": "OFF / ON",
+  "def": "OFF",
+  "recommend": "OFF (ON — если боишься перебить кого-то)",
+  "safety": "yellow",
+  "page": "AM 28"
+ },
+ {
+  "no": 4,
+  "name": "BEEP",
+  "what": "Писк кнопок. KEY+SC — кнопки и остановка скана; KEY — только кнопки; OFF — тихо.",
+  "options": "OFF / KEY+SC / KEY",
+  "def": "KEY+SC",
+  "recommend": "KEY+SC",
+  "safety": "green",
+  "page": "AM 28"
+ },
+ {
+  "no": 5,
+  "name": "BEP.LVL",
+  "what": "Громкость писка кнопок.",
+  "options": "LEVEL1 … LEVEL7",
+  "def": "LEVEL4",
+  "recommend": "По слуху",
+  "safety": "green",
+  "page": "AM 28"
+ },
+ {
+  "no": 6,
+  "name": "BEP.EDG",
+  "what": "Пищать на краю диапазона или на канале памяти 1.",
+  "options": "OFF / ON",
+  "def": "OFF",
+  "recommend": "OFF",
+  "safety": "green",
+  "page": "AM 29"
+ },
+ {
+  "no": 7,
+  "name": "BEP.STB",
+  "what": "Пищать, когда собеседник в цифре закончил говорить.",
+  "options": "OFF / ON",
+  "def": "ON",
+  "recommend": "ON — удобно понимать, когда отвечать",
+  "safety": "green",
+  "page": "AM 29"
+ },
+ {
+  "no": 8,
+  "name": "BELL",
+  "what": "Звонок, когда тебя вызвали нужным тоном, DCS или пейджером.",
+  "options": "OFF / 1T … 20T / CONT",
+  "def": "OFF",
+  "recommend": "OFF",
+  "safety": "green",
+  "page": "AM 12, 29"
+ },
+ {
+  "no": 9,
+  "name": "BNK.NAM",
+  "what": "Имена банков памяти.",
+  "options": "до 6 символов",
+  "def": "BANK 1 … BANK 24",
+  "recommend": "По желанию",
+  "safety": "green",
+  "page": "AM 16, 29"
+ },
+ {
+  "no": 10,
+  "name": "BSY.LED",
+  "what": "Горит ли лампочка на приёме.",
+  "options": "LED.OFF / LED.ON",
+  "def": "LED.ON",
+  "recommend": "LED.ON — видно, что кто-то говорит",
+  "safety": "green",
+  "page": "AM 30"
+ },
+ {
+  "no": 11,
+  "name": "CLK.SFT",
+  "what": "Сдвиг тактовой частоты процессора — убирает внутреннюю помеху («свист») на отдельных частотах.",
+  "options": "A / B",
+  "def": "A",
+  "recommend": "A",
+  "safety": "red",
+  "page": "AM 30"
+ },
+ {
+  "no": 12,
+  "name": "DC VLT",
+  "what": "Показывает напряжение батареи. С завода вызывается кнопками [F] → [7].",
+  "options": "(только показ)",
+  "def": "—",
+  "recommend": "Просто смотреть",
+  "safety": "green",
+  "page": "AM 30"
+ },
+ {
+  "no": 13,
+  "name": "DCS.INV",
+  "what": "Инверсия кода DCS. Нужна очень редко.",
+  "options": "RXN.TXN / RXR.TXN / RXB.TXN / RXN.TXR / RXR.TXR / RXB.TXR",
+  "def": "RXN.TXN",
+  "recommend": "RXN.TXN",
+  "safety": "red",
+  "page": "AM 30"
+ },
+ {
+  "no": 14,
+  "name": "DIMMER",
+  "what": "Яркость подсветки экрана и кнопок.",
+  "options": "LEVEL1 … LEVEL6",
+  "def": "LEVEL6",
+  "recommend": "LEVEL6 — ярче видно",
+  "safety": "green",
+  "page": "AM 31"
+ },
+ {
+  "no": 15,
+  "name": "DIG.POP",
+  "what": "Сколько секунд показывать позывной собеседника в цифре.",
+  "options": "OFF / 2 SEC … 60 SEC / CONT",
+  "def": "10 SEC",
+  "recommend": "10–20 SEC",
+  "safety": "green",
+  "page": "AM 31"
+ },
+ {
+  "no": 16,
+  "name": "DIG VW",
+  "what": "Разрешить режим VW (широкая цифра) в кнопке MODE.",
+  "options": "OFF / ON",
+  "def": "OFF",
+  "recommend": "OFF — меньше путаницы",
+  "safety": "yellow",
+  "page": "AM 31"
+ },
+ {
+  "no": 17,
+  "name": "DP-ID",
+  "what": "Список «личных номеров» раций-друзей (DP-ID).",
+  "options": "список до 24",
+  "def": "пусто",
+  "recommend": "Не трогать без надобности",
+  "safety": "yellow",
+  "page": "AM 4–6"
+ },
+ {
+  "no": 18,
+  "name": "DT DLY",
+  "what": "Задержка перед отправкой DTMF-набора из памяти.",
+  "options": "50MS / 250MS / 450MS / 750MS / 1000MS",
+  "def": "450MS",
+  "recommend": "Не трогать",
+  "safety": "red",
+  "page": "AM 31"
+ },
+ {
+  "no": 19,
+  "name": "DT SET",
+  "what": "Память DTMF-номеров (10 ячеек по 16 знаков).",
+  "options": "CH0 … CH9",
+  "def": "CH1",
+  "recommend": "Не трогать без надобности",
+  "safety": "yellow",
+  "page": "AM 21"
+ },
+ {
+  "no": 20,
+  "name": "DT SPD",
+  "what": "Скорость отправки DTMF.",
+  "options": "50MS / 100MS",
+  "def": "50MS",
+  "recommend": "Не трогать",
+  "safety": "red",
+  "page": "AM 32"
+ },
+ {
+  "no": 21,
+  "name": "DW INT",
+  "what": "Как часто заглядывать на приоритетный канал в режиме DW.",
+  "options": "0.1S … 10.0S",
+  "def": "5.0S",
+  "recommend": "5.0S",
+  "safety": "green",
+  "page": "AM 32"
+ },
+ {
+  "no": 22,
+  "name": "DW RSM",
+  "what": "Что делать, когда на приоритетном канале появился сигнал: слушать секунды, пока говорят (BUSY) или остаться (HOLD).",
+  "options": "2.0S … 10.0S / BUSY / HOLD",
+  "def": "HOLD",
+  "recommend": "BUSY",
+  "safety": "green",
+  "page": "AM 20, 32"
+ },
+ {
+  "no": 23,
+  "name": "DW RVT",
+  "what": "При нажатии PTT во время DW — передавать на приоритетный канал и потом продолжать DW.",
+  "options": "OFF / ON",
+  "def": "OFF",
+  "recommend": "OFF",
+  "safety": "yellow",
+  "page": "AM 32"
+ },
+ {
+  "no": 24,
+  "name": "GM RNG",
+  "what": "Писк Group Monitor, когда свои станции в зоне или вышли из неё.",
+  "options": "OFF / IN RNG / ALWAYS",
+  "def": "IN RNG",
+  "recommend": "IN RNG",
+  "safety": "green",
+  "page": "AM 33"
+ },
+ {
+  "no": 25,
+  "name": "GM INT",
+  "what": "Как часто GM сам опрашивает группу.",
+  "options": "OFF / NORMAL (≈15 с) / LONG (≈1 мин)",
+  "def": "NORMAL",
+  "recommend": "NORMAL",
+  "safety": "green",
+  "page": "AM 33"
+ },
+ {
+  "no": 26,
+  "name": "HM/RV",
+  "what": "Что делает кнопка [HM/RV] без [F]: HOME — Home-канал; REV — реверс на репитере.",
+  "options": "HOME / REV",
+  "def": "HOME (по Advance Manual; в Operating Manual выделено REV)",
+  "recommend": "HOME",
+  "safety": "green",
+  "page": "AM 33",
+  "note": "Два мануала указывают разное заводское значение. Проверь на своей рации."
+ },
+ {
+  "no": 27,
+  "name": "HM-VFO",
+  "what": "Если на Home-канале покрутить ручку — перейти ли в обычный VFO.",
+  "options": "OFF / ON",
+  "def": "ON",
+  "recommend": "ON",
+  "safety": "green",
+  "page": "AM 34"
+ },
+ {
+  "no": 28,
+  "name": "LAMP",
+  "what": "Сколько горит подсветка после нажатия.",
+  "options": "OFF / 2 SEC … 10 SEC / CONT",
+  "def": "5 SEC",
+  "recommend": "5–10 SEC (CONT — всегда, но батарея садится быстрее)",
+  "safety": "green",
+  "page": "AM 34"
+ },
+ {
+  "no": 29,
+  "name": "LED.LGT",
+  "what": "Фонарик: лампочка MODE/STATUS светит постоянно. Кнопка [F] включает/выключает. Выход — держать [F].",
+  "options": "(вкл/выкл кнопкой F)",
+  "def": "—",
+  "recommend": "Когда нужен фонарик",
+  "safety": "green",
+  "page": "AM 34"
+ },
+ {
+  "no": 30,
+  "name": "LOCK",
+  "what": "Что блокирует замочек (короткое нажатие POWER): кнопки (KEY), ручку (DIAL), передачу (PTT) и сочетания.",
+  "options": "KEY / DIAL / K+D / PTT / K+P / D+P / ALL",
+  "def": "K+D",
+  "recommend": "K+D — кнопки и ручка, а передача работает",
+  "safety": "yellow",
+  "page": "AM 34"
+ },
+ {
+  "no": 31,
+  "name": "MCGAIN",
+  "what": "Чувствительность микрофона. Держишь PTT — можно подбирать на ходу.",
+  "options": "LEVEL1 … LEVEL9",
+  "def": "LEVEL5",
+  "recommend": "LEVEL5; если говорят «тихо» — 6–7",
+  "safety": "yellow",
+  "page": "AM 35"
+ },
+ {
+  "no": 32,
+  "name": "M/T-CL",
+  "what": "Боковая кнопка MONI/T.CALL: MONI — открыть шумодав; T-CALL — писк 1750 Гц для репитеров.",
+  "options": "MONI / T-CALL",
+  "def": "T-CALL у европейской версии (OM стр. 3)",
+  "recommend": "T-CALL",
+  "safety": "yellow",
+  "page": "AM 35",
+  "note": "В общей таблице выделено MONI, но для европейской версии Operating Manual пишет, что кнопка даёт 1750 Гц (T-CALL)."
+ },
+ {
+  "no": 33,
+  "name": "MEM.NAM",
+  "what": "Имя текущего канала памяти или Home-канала.",
+  "options": "до 6 символов",
+  "def": "пусто",
+  "recommend": "По желанию",
+  "safety": "green",
+  "page": "AM 13"
+ },
+ {
+  "no": 34,
+  "name": "MW MOD",
+  "what": "Какой номер канала предлагать при записи: NEXT — следующий после последнего записанного; LOWER — самый маленький свободный.",
+  "options": "NEXT / LOWER",
+  "def": "NEXT",
+  "recommend": "NEXT",
+  "safety": "green",
+  "page": "AM 35"
+ },
+ {
+  "no": 35,
+  "name": "NM/FRQ",
+  "what": "На канале памяти показывать частоту (FREQ) или имя (ALPHA).",
+  "options": "FREQ / ALPHA",
+  "def": "FREQ",
+  "recommend": "ALPHA, если каналам даны имена",
+  "safety": "green",
+  "page": "AM 14, 35"
+ },
+ {
+  "no": 36,
+  "name": "OPN.MSG",
+  "what": "Что показать при включении: ничего, свою надпись (до 6 букв) или напряжение батареи.",
+  "options": "OFF / MSG / DC",
+  "def": "MSG",
+  "recommend": "DC — при включении сразу видно напряжение батареи",
+  "safety": "green",
+  "page": "AM 36"
+ },
+ {
+  "no": 37,
+  "name": "PAG.ABK",
+  "what": "Пейджер: автоответ, когда тебя вызвали (рация сама коротко передаст).",
+  "options": "OFF / ON",
+  "def": "OFF",
+  "recommend": "OFF",
+  "safety": "yellow",
+  "page": "AM 11, 36"
+ },
+ {
+  "no": 38,
+  "name": "PAG.CDR",
+  "what": "Пейджер: твой код для приёма (две цифры из 01–50).",
+  "options": "01 … 50, 01 … 50",
+  "def": "05 47",
+  "recommend": "Не трогать без надобности",
+  "safety": "yellow",
+  "page": "AM 10, 36"
+ },
+ {
+  "no": 39,
+  "name": "PAG.CDT",
+  "what": "Пейджер: код того, кого вызываешь.",
+  "options": "01 … 50, 01 … 50",
+  "def": "05 47",
+  "recommend": "Не трогать без надобности",
+  "safety": "yellow",
+  "page": "AM 11, 37"
+ },
+ {
+  "no": 40,
+  "name": "PASSWD",
+  "what": "Включить пароль при включении рации. Забудешь пароль — поможет только полный сброс (всё сотрётся)!",
+  "options": "OFF / ON",
+  "def": "OFF",
+  "recommend": "OFF",
+  "safety": "red",
+  "page": "AM 37"
+ },
+ {
+  "no": 41,
+  "name": "PSWDWT",
+  "what": "Сам пароль (4 цифры).",
+  "options": "4 цифры",
+  "def": "—",
+  "recommend": "Не трогать",
+  "safety": "red",
+  "page": "AM 37"
+ },
+ {
+  "no": 42,
+  "name": "PTT.DLY",
+  "what": "Задержка начала передачи после нажатия PTT.",
+  "options": "OFF / 20MS / 50MS / 100MS / 200MS",
+  "def": "OFF",
+  "recommend": "OFF",
+  "safety": "yellow",
+  "page": "AM 37"
+ },
+ {
+  "no": 43,
+  "name": "RAD ID",
+  "what": "Личный номер рации (5 знаков). Только посмотреть, изменить нельзя.",
+  "options": "(только показ)",
+  "def": "—",
+  "recommend": "Просто смотреть",
+  "safety": "green",
+  "page": "AM 37"
+ },
+ {
+  "no": 44,
+  "name": "RF SQL",
+  "what": "Шумодав по уровню сигнала: открывать динамик только для сигналов сильнее S1…S9.",
+  "options": "OFF / S1 … S9",
+  "def": "OFF",
+  "recommend": "OFF",
+  "safety": "yellow",
+  "page": "AM 38"
+ },
+ {
+  "no": 45,
+  "name": "RPT.ARS",
+  "what": "Автоматический сдвиг на частотах репитеров (ARS).",
+  "options": "OFF / ON",
+  "def": "ON",
+  "recommend": "ON",
+  "safety": "yellow",
+  "page": "AM 38"
+ },
+ {
+  "no": 46,
+  "name": "RPT.FRQ",
+  "what": "Величина сдвига для репитера.",
+  "options": "0.00M … 150.00M",
+  "def": "зависит от диапазона",
+  "recommend": "2 м — 0.60M; 70 см — 7.60M",
+  "safety": "yellow",
+  "page": "AM 38",
+  "note": "Значение по умолчанию в мануале не указано."
+ },
+ {
+  "no": 47,
+  "name": "RX MOD",
+  "what": "Режим приёма для диапазона: AUTO (сам), FM или AM. С завода вызывается [F] → [8].",
+  "options": "AUTO / FM / AM",
+  "def": "AUTO",
+  "recommend": "AUTO",
+  "safety": "yellow",
+  "page": "AM 38"
+ },
+ {
+  "no": 48,
+  "name": "RX SAVE",
+  "what": "Экономия батареи на приёме: сколько «спать» между проверками эфира.",
+  "options": "OFF / 0.2S … 60.0S",
+  "def": "0.2S",
+  "recommend": "0.2S–1.0S",
+  "safety": "green",
+  "page": "AM 39"
+ },
+ {
+  "no": 49,
+  "name": "SCM.WTH",
+  "what": "Скан памяти: все каналы (ALL) или только своего диапазона (BAND).",
+  "options": "ALL / BAND",
+  "def": "ALL",
+  "recommend": "ALL",
+  "safety": "green",
+  "page": "AM 39"
+ },
+ {
+  "no": 50,
+  "name": "SCV.WTH",
+  "what": "Скан VFO: на краю диапазона переходить в следующий (ALL) или крутиться в своём (BAND).",
+  "options": "ALL / BAND",
+  "def": "ALL",
+  "recommend": "ALL",
+  "safety": "green",
+  "page": "AM 39"
+ },
+ {
+  "no": 51,
+  "name": "SCN.LMP",
+  "what": "Включать подсветку, когда скан остановился на сигнале.",
+  "options": "OFF / ON",
+  "def": "ON",
+  "recommend": "ON",
+  "safety": "green",
+  "page": "AM 40"
+ },
+ {
+  "no": 52,
+  "name": "SCN.RSM",
+  "what": "Что делать скану на сигнале: слушать N секунд, слушать пока говорят (BUSY), остановиться (HOLD).",
+  "options": "2.0S … 10.0S / BUSY / HOLD",
+  "def": "5.0S",
+  "recommend": "BUSY",
+  "safety": "green",
+  "page": "OM 28; AM 40"
+ },
+ {
+  "no": 53,
+  "name": "SCN.STR",
+  "what": "Через сколько продолжить скан после того, как сигнал пропал.",
+  "options": "0.1S … 10.0S",
+  "def": "2.0S",
+  "recommend": "2.0S",
+  "safety": "green",
+  "page": "AM 40"
+ },
+ {
+  "no": 54,
+  "name": "SQL.EXP",
+  "what": "Разрешает сложные режимы тона (D CODE, T DCS, D TONE) — разные для передачи и приёма.",
+  "options": "SPL.OFF / SPL.ON",
+  "def": "SPL.OFF",
+  "recommend": "SPL.OFF",
+  "safety": "red",
+  "page": "AM 7, 40"
+ },
+ {
+  "no": 55,
+  "name": "TEMP",
+  "what": "Температура внутри рации. [V/M] — °C или °F. Выход — держать [F].",
+  "options": "(только показ)",
+  "def": "—",
+  "recommend": "Просто смотреть",
+  "safety": "green",
+  "page": "AM 41"
+ },
+ {
+  "no": 56,
+  "name": "TOT",
+  "what": "Таймер передачи: через сколько минут непрерывной передачи рация сама вернётся на приём. За 10 секунд пищит.",
+  "options": "OFF / 0.5M … 10.0M",
+  "def": "3.0M (по Operating Manual; в Advance Manual выделено OFF)",
+  "recommend": "3.0M — защита от «залипшей» PTT",
+  "safety": "green",
+  "page": "OM 37; AM 41",
+  "note": "Два мануала указывают разное заводское значение. Проверь на рации."
+ },
+ {
+  "no": 57,
+  "name": "TS MUT",
+  "what": "Выключать звук во время поиска тона.",
+  "options": "OFF / ON",
+  "def": "ON",
+  "recommend": "ON",
+  "safety": "green",
+  "page": "AM 41"
+ },
+ {
+  "no": 58,
+  "name": "TS SPD",
+  "what": "Скорость поиска тона.",
+  "options": "FAST / SLOW",
+  "def": "FAST",
+  "recommend": "FAST",
+  "safety": "green",
+  "page": "AM 41"
+ },
+ {
+  "no": 59,
+  "name": "VER.INF",
+  "what": "Версия прошивки: C x.xx — основная, D x.xx — DSP (крути ручку).",
+  "options": "(только показ)",
+  "def": "—",
+  "recommend": "Должно быть C 1.11",
+  "safety": "green",
+  "page": "AM 41"
+ },
+ {
+  "no": 60,
+  "name": "VFO.MOD",
+  "what": "Ручка в VFO: на краю диапазона переходить в соседний (ALL) или по кругу в своём (BAND).",
+  "options": "ALL / BAND",
+  "def": "BAND (по Operating Manual; в Advance Manual выделено ALL)",
+  "recommend": "BAND — меньше путаницы",
+  "safety": "green",
+  "page": "AM 42",
+  "note": "Два мануала указывают разное заводское значение."
+ },
+ {
+  "no": 61,
+  "usaNo": 62,
+  "name": "W/N.DEV",
+  "what": "Громкость (девиация) передачи в FM. WIDE — обычная, NARROW — вдвое тише.",
+  "options": "WIDE / NARROW",
+  "def": "WIDE",
+  "recommend": "WIDE",
+  "safety": "red",
+  "page": "AM 42"
+ },
+ {
+  "no": 62,
+  "usaNo": 63,
+  "name": "W-DGID",
+  "what": "DG-ID для подключения к узлу WIRES-X. AUTO — открытые узлы с 00.",
+  "options": "AUTO / DGID01 … DGID99",
+  "def": "AUTO",
+  "recommend": "AUTO (если хозяин узла не сказал иное)",
+  "safety": "yellow",
+  "page": "OM 30; AM 42"
+ },
+ {
+  "no": 63,
+  "usaNo": 64,
+  "name": "MYCALL",
+  "what": "Твой позывной (до 10 символов). Его видят собеседники в цифре.",
+  "options": "до 10 символов",
+  "def": "—",
+  "recommend": "UR4MAD",
+  "safety": "green",
+  "page": "OM 14; AM 42"
+ }
+]

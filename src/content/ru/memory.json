@@ -1,0 +1,269 @@
+[
+  {
+    "id": "memory-write",
+    "title": "Записать частоту в канал памяти",
+    "section": "memory",
+    "keywords": ["память", "записать", "сохранить", "канал", "memory", "v/m", "запомнить"],
+    "difficulty": 1,
+    "verified": true,
+    "manualRef": "Operating Manual, стр. 24–25",
+    "steps": [
+      { "text": "Настрой частоту и всё остальное (режим, сдвиг, тон, мощность). В память попадёт всё, что сейчас на экране." },
+      { "text": "Подержи [V/M] — замигает номер канала.", "keys": ["hold:V/M"] },
+      { "text": "Крути DIAL, выбери номер. Свободные каналы мигают.", "keys": ["DIAL"], "tip": "Каналы 1–900 — обычные. 901–999 — особые: для пропуска частот при поиске." },
+      { "text": "Нажми [V/M]. Если канал занят, появится {{M-WRT?}} — нажми [V/M] ещё раз, чтобы перезаписать.", "keys": ["V/M"], "lcd": "M-WRT?" },
+      { "text": "Откроется ввод имени. Можно ввести до 6 букв (как SMS) или пропустить.", "tip": "[BAND] — курсор вправо, [MODE] — влево, держать [GM] — стереть." },
+      { "text": "Подержи [V/M] — пискнет, канал записан.", "keys": ["hold:V/M"] }
+    ],
+    "related": ["memory-name", "repeater-save-memory"]
+  },
+  {
+    "id": "memory-recall",
+    "title": "Вызвать канал памяти",
+    "section": "memory",
+    "keywords": ["вызвать", "канал", "память", "открыть канал", "номер канала"],
+    "difficulty": 1,
+    "verified": true,
+    "manualRef": "Operating Manual, стр. 25",
+    "steps": [
+      { "text": "Нажми [V/M] — появится последний канал.", "keys": ["V/M"] },
+      { "text": "Крути DIAL, чтобы выбрать канал. Или набери номер тремя цифрами: 0, 1, 2 — это канал 12.", "keys": ["DIAL"] },
+      { "text": "[F] + DIAL — прыгать через 10 каналов.", "keys": ["F", "DIAL"] },
+      { "text": "Вернуться к ручной частоте — снова [V/M].", "keys": ["V/M"] }
+    ]
+  },
+  {
+    "id": "memory-name",
+    "title": "Дать имя каналу или переименовать",
+    "section": "memory",
+    "keywords": ["имя", "название", "переименовать", "тег", "tag", "mem.nam", "подпись канала"],
+    "difficulty": 2,
+    "verified": true,
+    "manualRef": "Advance Manual, стр. 13 (меню 33 MEM.NAM)",
+    "steps": [
+      { "text": "Вызови нужный канал памяти.", "keys": ["V/M", "DIAL"] },
+      { "text": "Подержи [F], крути DIAL до {{33 MEM.NAM}}, нажми [F].", "keys": ["hold:F", "DIAL", "F"], "lcd": "33 MEM.NAM" },
+      { "text": "Введи буквы (до 6): [2] — A, B, C, 2; [3] — D, E, F, 3 и так далее. Или крути DIAL.", "keys": ["2", "3"] },
+      { "text": "[BAND] — курсор вправо, [MODE] — влево. Подержать [GM] — стереть всё правее курсора.", "keys": ["BAND", "MODE", "hold:GM"] },
+      { "text": "Нажми PTT — имя сохранится.", "keys": ["PTT"] }
+    ],
+    "related": ["memory-name-display"]
+  },
+  {
+    "id": "memory-name-display",
+    "title": "Показывать имя канала или частоту",
+    "section": "memory",
+    "keywords": ["имя", "частота", "показывать", "nm/frq", "alpha", "дисплей"],
+    "difficulty": 1,
+    "verified": true,
+    "manualRef": "Advance Manual, стр. 14",
+    "steps": [
+      { "text": "Вызови канал памяти, у которого есть имя.", "keys": ["V/M"] },
+      { "text": "Нажми [F], потом [MODE] — экран переключится между именем и частотой.", "keys": ["F", "MODE"], "tip": "Если имени нет, рация просто пискнет." }
+    ]
+  },
+  {
+    "id": "memory-delete",
+    "title": "Удалить канал памяти",
+    "section": "memory",
+    "keywords": ["удалить", "стереть", "канал", "очистить", "m-msk"],
+    "difficulty": 2,
+    "verified": true,
+    "danger": true,
+    "manualRef": "Operating Manual, стр. 26",
+    "steps": [
+      { "text": "Нажми [V/M] — режим памяти.", "keys": ["V/M"] },
+      { "text": "Подержи [V/M].", "keys": ["hold:V/M"] },
+      { "text": "Крути DIAL до канала, который нужно удалить.", "keys": ["DIAL"] },
+      { "text": "Нажми [AMS]. Появится вопрос {{M-MSK?}}.", "keys": ["AMS"], "lcd": "M-MSK?" },
+      { "text": "Нажми [AMS] ещё раз — канал удалён.", "keys": ["AMS"] }
+    ],
+    "warning": "Канал 1 и Home-каналы удалить нельзя. Удалённый канал можно вернуть — смотри «Вернуть удалённый канал».",
+    "related": ["memory-restore"]
+  },
+  {
+    "id": "memory-restore",
+    "title": "Вернуть случайно удалённый канал",
+    "section": "memory",
+    "keywords": ["вернуть", "восстановить", "удалил", "канал пропал"],
+    "difficulty": 2,
+    "verified": true,
+    "manualRef": "Operating Manual, стр. 26",
+    "steps": [
+      { "text": "Нажми [V/M], потом подержи [V/M].", "keys": ["V/M", "hold:V/M"] },
+      { "text": "Крути DIAL до удалённого канала.", "keys": ["DIAL"] },
+      { "text": "Нажми [AMS] — канал вернётся.", "keys": ["AMS"] }
+    ]
+  },
+  {
+    "id": "memory-bank-add",
+    "title": "Положить канал в банк (группу каналов)",
+    "section": "memory",
+    "keywords": ["банк", "bank", "группа", "папка", "сортировать"],
+    "difficulty": 2,
+    "verified": true,
+    "manualRef": "Advance Manual, стр. 15",
+    "intro": "Банк — это папка для каналов. Банков 24, в каждом до 100 каналов. Один канал может лежать в нескольких банках.",
+    "steps": [
+      { "text": "Нажми [V/M] и выбери канал ручкой DIAL.", "keys": ["V/M", "DIAL"] },
+      { "text": "Подержи [V/M] — замигает значок.", "keys": ["hold:V/M"] },
+      { "text": "Крути DIAL до банка {{b1}}…{{b24}}. Банки идут в списке между каналом 1 и U50.", "keys": ["DIAL"], "lcd": "b1" },
+      { "text": "Нажми [V/M] — канал добавлен в банк.", "keys": ["V/M"] }
+    ],
+    "related": ["memory-bank-open", "memory-bank-name"]
+  },
+  {
+    "id": "memory-bank-open",
+    "title": "Открыть банк и работать только с его каналами",
+    "section": "memory",
+    "keywords": ["банк", "открыть банк", "bank", "no bnk"],
+    "difficulty": 2,
+    "verified": true,
+    "manualRef": "Advance Manual, стр. 15–16",
+    "steps": [
+      { "text": "Нажми [F], потом [BAND].", "keys": ["F", "BAND"] },
+      { "text": "Крути DIAL, выбери банк b1…b24.", "keys": ["DIAL"], "lcd": "b1" },
+      { "text": "Нажми [BAND] — банк открыт. Ручка листает только его каналы.", "keys": ["BAND"] },
+      { "text": "В режиме памяти кнопка [BAND] переключает: {{BANK}} — каналы банка, {{MEMORY}} — все каналы.", "keys": ["BAND"], "tip": "Если в банке пусто, будет {{NO BNK}}." }
+    ]
+  },
+  {
+    "id": "memory-bank-name",
+    "title": "Дать имя банку",
+    "section": "memory",
+    "keywords": ["банк", "имя банка", "bnk.nam"],
+    "difficulty": 2,
+    "verified": true,
+    "manualRef": "Advance Manual, стр. 16 (меню 9 BNK.NAM)",
+    "steps": [
+      { "text": "Подержи [F], крути DIAL до {{9 BNK.NAM}}, нажми [F].", "keys": ["hold:F", "DIAL", "F"], "lcd": "9 BNK.NAM" },
+      { "text": "Ручкой выбери банк, нажми [V/M].", "keys": ["DIAL", "V/M"] },
+      { "text": "Введи имя (например {{REPIT}}), нажми PTT.", "keys": ["PTT"] }
+    ]
+  },
+  {
+    "id": "memory-bank-remove",
+    "title": "Убрать канал из банка",
+    "section": "memory",
+    "keywords": ["банк", "убрать", "удалить из банка"],
+    "difficulty": 2,
+    "verified": true,
+    "manualRef": "Advance Manual, стр. 16",
+    "steps": [
+      { "text": "Открой банк ([F] → [BAND] → DIAL → [BAND]).", "keys": ["F", "BAND", "DIAL", "BAND"] },
+      { "text": "Ручкой выбери канал.", "keys": ["DIAL"] },
+      { "text": "Подержи [V/M], потом нажми [AMS].", "keys": ["hold:V/M", "AMS"] }
+    ]
+  },
+  {
+    "id": "memory-split",
+    "title": "Канал с разными частотами приёма и передачи (split)",
+    "section": "memory",
+    "keywords": ["split", "сплит", "разнос", "нестандартный сдвиг", "разные частоты"],
+    "difficulty": 3,
+    "verified": true,
+    "manualRef": "Advance Manual, стр. 13",
+    "intro": "Нужно для репитеров с необычным сдвигом.",
+    "steps": [
+      { "text": "Запиши в канал частоту ПРИЁМА — как обычно.", "keys": ["hold:V/M", "DIAL", "V/M", "hold:V/M"] },
+      { "text": "Настрой рацию на частоту ПЕРЕДАЧИ." },
+      { "text": "Подержи [V/M] и ручкой выбери тот же канал.", "keys": ["hold:V/M", "DIAL"] },
+      { "text": "Держи PTT и нажми [V/M]. Рация пискнет — split записан.", "keys": ["PTT&V/M"] }
+    ]
+  },
+  {
+    "id": "memory-only",
+    "title": "Режим «только каналы памяти» (чтобы ничего не сбить)",
+    "section": "memory",
+    "keywords": ["только память", "memory only", "m-only", "защита", "упростить"],
+    "difficulty": 2,
+    "verified": true,
+    "manualRef": "Operating Manual, стр. 25; Advance Manual, стр. 14",
+    "intro": "Удобно, если нужно, чтобы рация работала только на записанных каналах и частоту нельзя было случайно сбить.",
+    "steps": [
+      { "text": "Выключи рацию.", "keys": ["hold:POWER"] },
+      { "text": "Держи [V/M] и одновременно держи POWER, пока рация не включится.", "keys": ["V/M&hold:POWER"] },
+      { "text": "Теперь ручка листает только каналы. На [V/M] рация ответит {{M-ONLY}}.", "lcd": "M-ONLY" },
+      { "text": "Отменить: выключи и снова включи, держа [V/M].", "keys": ["V/M&hold:POWER"] }
+    ]
+  },
+  {
+    "id": "memory-pc-adms10",
+    "title": "Программирование с компьютера: ADMS-10 (бесплатно, от Yaesu)",
+    "section": "memory",
+    "keywords": ["компьютер", "pc", "adms", "adms-10", "программа", "usb", "кабель", "windows", "программирование"],
+    "difficulty": 3,
+    "verified": true,
+    "manualRef": "ADMS-10 Instruction Manual (2211-C), стр. 4, 7–11, 19",
+    "intro": "Нужны: компьютер с Windows 8.1/10/11, USB-кабель из коробки рации и зарядное устройство. Программу скачай с yaesu.com (страница FT-70DR → Files → FT-70D_ADMS-10_ENG.zip).",
+    "steps": [
+      { "text": "Распакуй архив и запусти setup.exe от имени администратора. Нажимай Next → Install → Finish." },
+      { "text": "На рации: сними аккумулятор." },
+      { "text": "Вставь зарядку в розетку, а её штекер — в гнездо EXT DC IN рации (правый бок, под заглушкой). На экране появится {{EXT DC}} или {{CHG ERR}} — это нормально.", "lcd": "EXT DC" },
+      { "text": "Включи рацию: держи POWER.", "keys": ["hold:POWER"] },
+      { "text": "Вынь штекер зарядки из рации (рация останется включённой)." },
+      { "text": "Вставь USB-кабель в гнездо DATA рации до щелчка, другой конец — в компьютер." },
+      { "text": "Держи [AMS] и снова вставь штекер зарядки в EXT DC IN. На экране появится {{ADMS}}.", "keys": ["hold:AMS"], "lcd": "ADMS" },
+      { "text": "Первый раз: в программе Communications → COM port Settings → Device Manager. Найди «Unknown device» → Обновить драйвер → Выполнить поиск на этом компьютере → укажи папку ADMS-10." },
+      { "text": "В списке «Порты (COM и LPT)» появится «FT-70D communication device (COMxx)». Запиши номер COM и выбери его в Communications → COM port Settings." },
+      { "text": "Сначала ОБЯЗАТЕЛЬНО прочитай рацию: Communications → Get Data from FT-70D → OK, затем на рации нажми [BAND]. Появится {{--TX--}}.", "keys": ["BAND"], "lcd": "--TX--" },
+      { "text": "Сохрани файл на компьютер (File → Save As) — это твоя резервная копия!" },
+      { "text": "Отредактируй каналы и отправь: Communications → Send Data to FT-70D, дальше следуй подсказкам на экране компьютера.", "check": "Какую кнопку нажать на рации при отправке, мануал ADMS-10 не пишет («следуйте подсказкам»). По клонированию Yaesu это обычно [MODE] на принимающей рации." },
+      { "text": "Когда появится «Completed», выключи всё, вынь кабели и поставь аккумулятор." }
+    ],
+    "warning": "Во время передачи данных не трогай кабель и не отключай питание.",
+    "related": ["memory-pc-chirp", "help-pc"]
+  },
+  {
+    "id": "memory-pc-chirp",
+    "title": "Программирование с компьютера: CHIRP (бесплатно, Windows/Mac/Linux)",
+    "section": "memory",
+    "keywords": ["chirp", "компьютер", "linux", "mac", "программа", "usb"],
+    "difficulty": 3,
+    "verified": false,
+    "manualRef": "chirpmyradio.com, задачи #5329, #5647, #9211 (форум, не мануал Yaesu)",
+    "intro": "CHIRP умеет работать с FT-70D через тот же USB-кабель. Но у части пользователей бывают проблемы. Перед записью всегда сохраняй резервную копию.",
+    "steps": [
+      { "text": "Установи свежую версию CHIRP (chirpmyradio.com). Модель: Yaesu → FT-70D." },
+      { "text": "На Windows нужен драйвер USB. Проще всего поставить его один раз через ADMS-10 (см. инструкцию про ADMS-10)." },
+      { "text": "Подключи рацию в режиме {{ADMS}}: без аккумулятора, от зарядки, держа [AMS] (как в инструкции ADMS-10).", "keys": ["hold:AMS"], "lcd": "ADMS" },
+      { "text": "В CHIRP: Radio → Download From Radio, выбери порт. Сразу после нажатия OK нажми на рации [BAND].", "keys": ["BAND"] },
+      { "text": "Прочитанное СОХРАНИ в файл — это резервная копия." }
+    ],
+    "warning": "На форумах пишут, что CHIRP не всегда правильно переносит режим (FM/цифра). Официально поддерживается ADMS-10. На Linux порт иногда не появляется (CHIRP #9211).",
+    "related": ["memory-pc-adms10", "help-pc"]
+  },
+  {
+    "id": "memory-pc-rt",
+    "title": "Программирование с компьютера: RT Systems (платно)",
+    "section": "memory",
+    "keywords": ["rt systems", "adms-70d", "платная", "mac", "программа"],
+    "difficulty": 2,
+    "verified": false,
+    "manualRef": "rtsystemsinc.com (сайт производителя программы)",
+    "steps": [
+      { "text": "RT Systems ADMS-70D — платная программа для Windows и Mac. Продаётся вместе с кабелем на rtsystemsinc.com." },
+      { "text": "Многие на форумах называют её самой удобной и надёжной, особенно для банков памяти." },
+      { "text": "Подключение рации — по инструкции RT Systems." }
+    ]
+  },
+  {
+    "id": "memory-clone",
+    "title": "Скопировать всё с одной FT-70D на другую (клонирование)",
+    "section": "memory",
+    "keywords": ["клон", "clone", "скопировать", "ct-27", "вторая рация"],
+    "difficulty": 3,
+    "verified": true,
+    "manualRef": "Advance Manual, стр. 44",
+    "intro": "Нужен кабель CT-27 (покупается отдельно). Через него к компьютеру подключить нельзя — только рация к рации.",
+    "steps": [
+      { "text": "Выключи обе рации. Сними заглушки с гнёзд MIC/SP и соедини их кабелем CT-27." },
+      { "text": "На каждой: держи [F] и включи. Появится {{CLONE}}.", "keys": ["F&hold:POWER"], "lcd": "CLONE" },
+      { "text": "На рации, КОТОРАЯ ПОЛУЧАЕТ данные, нажми [MODE]. Будет {{--WAIT--}}.", "keys": ["MODE"], "lcd": "--WAIT--" },
+      { "text": "На рации, КОТОРАЯ ОТДАЁТ данные, нажми [BAND]. Будет {{--TX--}}.", "keys": ["BAND"], "lcd": "--TX--" },
+      { "text": "Дождись конца. Выключи обе рации и отсоедини кабель.", "tip": "{{ERROR}} — проверь кабель и начни сначала." }
+    ],
+    "danger": true,
+    "warning": "Всё на получающей рации заменится данными первой. Не перепутай, кто кому передаёт!"
+  }
+]

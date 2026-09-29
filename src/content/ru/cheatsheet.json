@@ -1,0 +1,17 @@
+[
+  { "what": "Включить / выключить", "keys": ["hold:POWER"] },
+  { "what": "Громкость", "keys": ["VOL&DIAL"] },
+  { "what": "Шумодав", "keys": ["F", "MONI", "DIAL", "PTT"] },
+  { "what": "Замочек вкл/выкл", "keys": ["POWER"] },
+  { "what": "Частота ↔ память", "keys": ["V/M"] },
+  { "what": "Тип тона (TONE)", "keys": ["F", "5", "DIAL", "PTT"] },
+  { "what": "Частота тона", "keys": ["F", "6", "DIAL", "F"] },
+  { "what": "Сдвиг − / + / нет", "keys": ["F", "0"] },
+  { "what": "Мощность", "keys": ["F", "1", "DIAL", "PTT"] },
+  { "what": "AMS вкл/выкл", "keys": ["hold:AMS"] },
+  { "what": "FM / цифра (без AMS)", "keys": ["MODE"] },
+  { "what": "Записать в память", "keys": ["hold:V/M", "DIAL", "V/M", "hold:V/M"] },
+  { "what": "Скан / стоп", "keys": ["F", "2", "PTT"] },
+  { "what": "WIRES-X / выход", "keys": ["F", "AMS", "hold:MODE"] },
+  { "what": "Меню SET", "keys": ["hold:F", "DIAL", "F", "PTT"] }
+]
